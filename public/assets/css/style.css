@@ -22,7 +22,7 @@ body {
 }
 
 .server-item {
-  width: 400px;
+  width: 300px;
   padding: 10px;
   transition: all 0.3s ease;
   cursor: pointer;

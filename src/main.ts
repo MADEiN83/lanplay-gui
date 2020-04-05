@@ -11,7 +11,8 @@ function createWindow(): void {
     width: 800,
     webPreferences: {
       webSecurity: false,
-      devTools: process.env.NODE_ENV === "production" ? false : true,
+      devTools: process.env.NODE_ENV !== "production",
+      preload: __dirname + "/preload.js",
     },
   });
 
