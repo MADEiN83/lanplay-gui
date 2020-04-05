@@ -1,6 +1,8 @@
 import * as React from "react";
 import { IServerInfoService } from "@/services/ServerInfoService";
 
+var USERS_ICON = require("../../../../assets/img/users.png");
+
 interface IProps {
   info?: IServerInfoService;
   isLoading: boolean;
@@ -24,6 +26,7 @@ const DisplayInfos: React.FC<IProps> = (props: IProps) => {
             )}
 
             {!info.idle && <React.Fragment>{info.online}</React.Fragment>}
+            <img src={USERS_ICON} alt="users" />
           </span>
         </React.Fragment>
       )}

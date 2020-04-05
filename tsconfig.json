@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
       "@/*": ["src/*"],
       "@public/*": ["public/*"],

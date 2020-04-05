@@ -15,12 +15,19 @@ const SERVERS = [
 ];
 
 const ServerListing: React.FC = () => {
+  const [selectedServer, setSelectedServer] = React.useState<string>();
+
   return (
     <div>
       ServerListing {SERVERS.length}
       <div className="display-servers-container">
         {SERVERS.map((server) => (
-          <DisplayServer key={server} server={server} />
+          <DisplayServer
+            key={server}
+            server={server}
+            selected={server === selectedServer}
+            handleOnSelect={() => setSelectedServer(server)}
+          />
         ))}
       </div>
     </div>

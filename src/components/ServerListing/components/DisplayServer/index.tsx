@@ -4,17 +4,20 @@ import ServerInfoService, {
 } from "@/services/ServerInfoService";
 import ConnectionState from "@/components/ConnectionState";
 import DisplayInfos from "../DisplayInfos";
+import DisplayActions from "../DisplayActions";
 
 const sis = new ServerInfoService();
 
 interface IProps {
   server: string;
+  selected?: boolean;
+  handleOnSelect: () => void;
 }
 
 const DisplayServer: React.FC<IProps> = (props: IProps) => {
   const [info, setInfo] = React.useState<IServerInfoService>();
   const [isLoading, setIsLoading] = React.useState(true);
-  const { server } = props;
+  const { server, selected = false, handleOnSelect } = props;
 
   React.useEffect(() => {
     sis
@@ -25,7 +28,7 @@ const DisplayServer: React.FC<IProps> = (props: IProps) => {
   }, []);
 
   return (
-    <div className="server-item scale-up-center">
+    <div className="server-item scale-up-center" onClick={handleOnSelect}>
       <div className="content">
         <span>
           <ConnectionState online={info !== undefined} />
@@ -33,6 +36,7 @@ const DisplayServer: React.FC<IProps> = (props: IProps) => {
         </span>
 
         <DisplayInfos isLoading={isLoading} info={info} />
+        {selected && <DisplayActions />}
       </div>
     </div>
   );

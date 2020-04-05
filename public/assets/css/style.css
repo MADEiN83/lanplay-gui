@@ -25,6 +25,7 @@ body {
   width: 400px;
   padding: 10px;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .server-item .content {
@@ -33,6 +34,7 @@ body {
   box-shadow: 0px 3px 10px 0px rgba(38, 59, 94, 0.1);
   background-color: #fff;
   padding: 10px;
+  transition: all 0.3s ease;
 }
 
 .server-item .server-item-description {
@@ -44,6 +46,10 @@ body {
   font-size: 12px;
 }
 
+.server-item .server-item-description img {
+  width: 10px;
+}
+
 .connection-state-dot {
   display: inline-block;
   color: red;
@@ -51,6 +57,25 @@ body {
 
 .connection-state-dot.active {
   color: green;
+}
+
+.server-item-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.server-item-actions img {
+  width: 25px;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.server-item-actions img:hover {
+  opacity: 1;
 }
 
 /*
