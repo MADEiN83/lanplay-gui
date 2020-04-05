@@ -1,0 +1,69 @@
+@import "./animations.css";
+
+:root {
+  --color-default: #4a4a4a;
+  --color-light: #757474;
+  --font-regular: "Roboto-Regular";
+  --font-bold: "Roboto-Bold";
+}
+
+body {
+  font-family: var(--font-regular);
+  font-size: 16px;
+  color: var(--color-default);
+  background-color: #eaf1fc;
+}
+
+.display-servers-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.server-item {
+  width: 400px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.server-item .content {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3px 10px 0px rgba(38, 59, 94, 0.1);
+  background-color: #fff;
+  padding: 10px;
+}
+
+.server-item .server-item-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-light);
+  font-size: 12px;
+}
+
+.connection-state-dot {
+  display: inline-block;
+  color: red;
+  font-size: 20px;
+  margin-top: 6px;
+}
+
+.connection-state-dot.active {
+  color: green;
+}
+
+/*
+ *
+ */
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../fonts/robot/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../fonts/robot/Roboto-Bold.ttf");
+}
