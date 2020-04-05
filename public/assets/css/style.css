@@ -47,8 +47,6 @@ body {
 .connection-state-dot {
   display: inline-block;
   color: red;
-  font-size: 20px;
-  margin-top: 6px;
 }
 
 .connection-state-dot.active {
