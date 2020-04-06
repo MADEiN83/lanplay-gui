@@ -32,7 +32,7 @@ const ServerListing: React.FC<IProps> = (props: IProps) => {
   } = props;
 
   return (
-    <div>
+    <>
       ServerListing {SERVERS.length}
       <div className="display-servers-container">
         {SERVERS.map((server) => (
@@ -47,7 +47,7 @@ const ServerListing: React.FC<IProps> = (props: IProps) => {
           />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

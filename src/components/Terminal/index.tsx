@@ -24,14 +24,9 @@ const Terminal: React.FC<IProps> = (props: IProps) => {
       pmtu,
     ]);
 
-    ls.stdout.on("data", (data: string = "") => {
-      console.log("ah", buffer);
-    });
-
     ls.stderr.on("data", (data: string = "") => {
       buffer = buffer + data;
       setContent(buffer);
-      console.log("ondata", buffer);
     });
 
     ls.on("exit", () => (buffer = ""));
@@ -44,7 +39,7 @@ const Terminal: React.FC<IProps> = (props: IProps) => {
   }, [serverAddr]);
 
   return (
-    <div className="terminal-container">
+    <div id="terminal" className="terminal-container">
       <div
         dangerouslySetInnerHTML={{
           __html: content.replace(/(?:\r\n|\r|\n)/g, "<br>"),

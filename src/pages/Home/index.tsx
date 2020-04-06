@@ -7,19 +7,27 @@ const Home: React.FC = () => {
   const [isRunning, setIsRunning] = React.useState(false);
 
   return (
-    <React.Fragment>
-      <ServerListing
-        onSelectServer={(server: string) => {
-          setServerAddr(server);
-          setIsRunning(false);
-        }}
-        currentServerAddr={serverAddr}
-        isRunning={isRunning}
-        onRun={() => setIsRunning(true)}
-        onStop={() => setIsRunning(false)}
-      />
-      {serverAddr && isRunning && <Terminal serverAddr={serverAddr} />}
-    </React.Fragment>
+    <>
+      <main className="">
+        <div className="main-top-container">
+          <ServerListing
+            onSelectServer={(server: string) => {
+              setServerAddr(server);
+              setIsRunning(false);
+            }}
+            currentServerAddr={serverAddr}
+            isRunning={isRunning}
+            onRun={() => setIsRunning(true)}
+            onStop={() => setIsRunning(false)}
+          />
+        </div>
+        {serverAddr && isRunning && (
+          <div className="main-bottom-container">
+            <Terminal serverAddr={serverAddr} />
+          </div>
+        )}
+      </main>
+    </>
   );
 };
 
