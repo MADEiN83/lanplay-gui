@@ -12,6 +12,7 @@ body {
   font-size: 16px;
   color: var(--color-default);
   background-color: #eaf1fc;
+  margin: 0;
 }
 
 .display-servers-container {
@@ -79,7 +80,17 @@ body {
 }
 
 /*
- *
+ * Terminal.
+ */
+.terminal-container {
+  background-color: #000;
+  padding: 20px;
+  max-height: 200px;
+  overflow: auto;
+}
+
+/*
+ * Fonts.
  */
 @font-face {
   font-family: "Roboto-Regular";

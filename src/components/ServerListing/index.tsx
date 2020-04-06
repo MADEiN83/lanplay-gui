@@ -14,8 +14,22 @@ const SERVERS = [
   "open.t0g3pii.tk:11451",
 ];
 
-const ServerListing: React.FC = () => {
-  const [selectedServer, setSelectedServer] = React.useState<string>();
+interface IProps {
+  currentServerAddr?: string;
+  onSelectServer: (serverAddr: string) => void;
+  onRun: () => void;
+  onStop: () => void;
+  isRunning?: boolean;
+}
+
+const ServerListing: React.FC<IProps> = (props: IProps) => {
+  const {
+    currentServerAddr,
+    onSelectServer,
+    onRun,
+    onStop,
+    isRunning = false,
+  } = props;
 
   return (
     <div>
@@ -25,8 +39,11 @@ const ServerListing: React.FC = () => {
           <DisplayServer
             key={server}
             server={server}
-            selected={server === selectedServer}
-            handleOnSelect={() => setSelectedServer(server)}
+            selected={server === currentServerAddr}
+            onSelect={() => onSelectServer(server)}
+            onRun={onRun}
+            onStop={onStop}
+            isRunning={isRunning}
           />
         ))}
       </div>
